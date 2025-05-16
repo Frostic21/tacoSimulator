@@ -1,8 +1,63 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+.html1{
+  background-color:deepskyblue;
+  background-image: url('https://piskel-imgstore-b.appspot.com/img/f6190bd7-097b-11ef-bbb2-d30b9e7094e1.gif');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 910px;
+  width: auto;
+}
+.container{
+  max-width: 1300px;
 }
 
-a {
-  color: #00B7FF;
+.content{
+  position: absolute;
+  padding: 10px;
+  background-color: blue;
+  background-size: 100%;
+  background-image: url("https://cdn.pixilart.com/photos/large/6de6c5e28263313.png");
+  border-right: darkgoldenrod 5px solid;
+  width: 600px;
+  height: auto;
+  left: 0px;
+  bottom: 0px;
+  top: 0px;
+}
+.Buttons{
+  margin:10px;
+}
+a.button1 {
+  text-align: center;
+  text-decoration: none;
+  position: absolute;
+  left: 60px;
+  width: auto;
+  height: 50px;
+  font-size: 40px;
+  transition-duration: 0.7s;
+  border-style: solid;
+  border-color: grey;
+  border-radius: 12px;
+  padding: 4px;
+  background-color: cadetblue;
+  color:white;
+  font-family: 'Pixelify Sans';
+}
+.button1:hover {
+  width: auto;
+  height: 60px;
+  text-align: center;
+  font-size: 50px;
+}
+.p1{
+  font-family: 'Pixelify Sans';
+  font-size: 50px;
+  text-align: center;
+  border: black solid 3px;
+  border-radius: 12px;
+  background-color: cornflowerblue;
+}
+body{
+  margin: 0;
+  background-color: green;
 }
