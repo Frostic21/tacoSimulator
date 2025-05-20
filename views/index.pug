@@ -6,4 +6,19 @@ block content
       div.content
         p.p1 Juan's Taco Truck
         div.Buttons
-          a.button1(href='/taco/taco') Start
+          if user
+            a.button1(href='/taco') Start
+            br
+            br
+            br
+            br
+            br
+            a.button1(href='/logout') Log Out
+          else
+            a.button1(href='/login') Login
+            br
+            br
+            br
+            br
+            br
+            a.button1(href='/register') Register

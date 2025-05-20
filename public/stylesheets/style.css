@@ -61,3 +61,36 @@ body{
   margin: 0;
   background-color: green;
 }
+.input-form-row{
+  display: flex;
+}
+.input-container{
+  margin-bottom: 16px;
+}
+.input-container.wide input{
+  width: 325px;
+}
+
+.input-form-row .input-container{
+  margin-right: 16px;
+}
+.helper-text{
+  font-size: 12px;
+  color: #71717A;
+  margin-top: 4px
+}
+.error{
+  color: darkred;
+  font-weight: bold;
+}
+.button.primary{
+  background: #312E81;
+  color: white;
+  border-color: #312E81;
+}
+label {
+  display: block;
+  color: #3F3F46;
+  font-weight: bold;
+  margin-bottom: 4px;
+}

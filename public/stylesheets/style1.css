@@ -1,0 +1,130 @@
+*{
+    box-sizing: border-box;
+    vertical-align: middle;
+    justify-content: center;
+}
+html{
+    background-image: url("https://art.pixilart.com/sr295894745beaws3.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-color: grey;
+}
+body, html{
+    align-content: center;
+    font-family: 'Pixelify Sans';
+}
+label {
+    display: block;
+    line-height: 1.25rem;
+    font-weight: 500;
+    font-size: 14px;
+    color: #374151;
+}
+
+input[type="text"], textarea, select{
+    font-size: .875rem;
+    line-height: 1.25rem;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin-bottom: 12px;
+    color: #374151;
+}
+fieldset{
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    width: fit-content;
+    margin-bottom: 16px;
+    padding: 12px;
+}
+
+
+fieldset legend{
+    font-size: 14px;
+    color: #374151;
+}
+
+input[type="checkbox"]{
+    display: inline-block;
+}
+
+input[type="checkbox"] ~ label, input[type="radio"] ~ label {
+    display: inline;
+}
+
+section{
+    margin-bottom: 16px;
+}
+
+section header{
+    margin-bottom: 8px;
+}
+
+.row {
+    justify-content: left;
+    display: flex;
+    gap: 16px;
+}
+
+
+.container{
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.content{
+    background-image: url("https://art.pixilart.com/sr2f40a8eb7d0aws3.png");
+    background-size: 100%;
+    background-position: center;
+    border-color: black;
+    padding: 20px;
+    width: 500px;
+    height: 800px;
+    border-style: solid;
+}
+.content2{
+    border-color: black;
+    border-style: solid;
+    padding: 20px;
+    background-image: url("https://art.pixilart.com/sr22b0e244610aws3.png");
+    background-size: 100%;
+    margin-bottom: 400px;
+    height: 530px;
+    width: 440px;
+    color: greenyellow;
+}
+.column{
+    float: left;
+    width: 100%;
+}
+.colorButton{
+    font-family: 'Pixelify Sans';
+    background-color: yellowgreen;
+    transition-duration: 0.5s;
+    box-shadow: 0 4px 16px 0 rgba(255,165,100,0.2), 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.colorButton:hover{
+    background-color: grey; /* Green */
+    color: white;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+img{
+    transition: 0.2s;
+}
+img:active{
+    height:185px;
+    width: 285px;
+    padding: 20px;
+}
+.colorButton1{
+    height: 220px;
+    width: 320px;
+    border-radius: 50px;
+    background-color: grey;
+    border-color: transparent;
+}
