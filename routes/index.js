@@ -22,7 +22,7 @@ function redirectGuests(req, res, next) {
 router.get('/', addUserToViews, function(req, res, next) {
   res.render('index');
 });
-router.get('/taco', addUserToViews, function(req, res, next) {
+router.get('/taco', addUserToViews, redirectGuests, function(req, res, next) {
   res.render('taco/taco')
 })
 router.get('/register', addUserToViews, userController.renderRegistration);
@@ -31,6 +31,6 @@ router.post('/register', addUserToViews, userController.register);
 router.get('/login', addUserToViews, userController.renderLogin);
 router.post('/login', addUserToViews, userController.authenticate);
 
-router.get('/logout', addUserToViews, userController.logout);
+router.get('/logout', addUserToViews, redirectGuests, userController.logout);
 
 module.exports = router;
