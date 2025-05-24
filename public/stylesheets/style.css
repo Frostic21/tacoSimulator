@@ -1,10 +1,8 @@
-.html1{
+body{
   background-color:deepskyblue;
   background-image: url('https://piskel-imgstore-b.appspot.com/img/f6190bd7-097b-11ef-bbb2-d30b9e7094e1.gif');
+  background-size: 100%;
   background-repeat: no-repeat;
-  background-attachment: fixed;
-  height: 910px;
-  width: auto;
 }
 .container{
   max-width: 1300px;
@@ -56,10 +54,6 @@ a.button1 {
   border: black solid 3px;
   border-radius: 12px;
   background-color: cornflowerblue;
-}
-body{
-  margin: 0;
-  background-color: green;
 }
 .input-form-row{
   display: flex;

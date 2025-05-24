@@ -1,0 +1,1 @@
+const {Taco} = require('../models');
