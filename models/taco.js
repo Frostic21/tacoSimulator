@@ -14,15 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Taco.init({
-    score: DataTypes.INTEGER,
-    bonus: DataTypes.INTEGER,
-    update: DataTypes.INTEGER,
-    autoUpdate: DataTypes.INTEGER,
-    shopRequirement: DataTypes.INTEGER,
-    autoUpdate2: DataTypes.INTEGER,
-    autobuythingy: DataTypes.INTEGER,
-    autoRequirement: DataTypes.INTEGER,
-    toppingsRequirement: DataTypes.INTEGER,
+    bonus: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Taco',
