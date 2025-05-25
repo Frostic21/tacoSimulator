@@ -1,56 +1,4 @@
-window.onload = function (){
-    if(getCookie("score")){
-        score = parseInt(getCookie("score"));
-    }
-    if (getCookie("autoUpdate2")) {
-        autoUpdate2 = parseInt(getCookie("autoUpdate"));
-    }
-    if (getCookie("autobuythingy")) {
-        autobuythingy = parseInt(getCookie("autobuythingy"));
-    }
-    if(getCookie("update")){
-        update = parseInt(getCookie("update"));
-    }
-    if(getCookie("autoUpdate")){
-        autoUpdate = parseInt(getCookie("autoUpdate"));
-    }
-    if(getCookie("bonus")){
-        bonus = parseInt(getCookie("bonus"));
-        bonusCounter = parseInt(getCookie("bonus"));
-    }
-    if(getCookie("shopRequirement")){
-        shopRequirement = parseInt(getCookie("shopRequirement"));
-    }
-    if(getCookie("autoRequirement")){
-        autoRequirement = parseInt(getCookie("autoRequirement"));
-    }
-    if(getCookie("toppingsRequirement")){
-        toppingsRequirement = parseInt(getCookie("toppingsRequirement"));
-    }
-    if (bonusCounter >= 5) {
-        pfpbuy.textContent = `Maxed Out`;
-        randomButtonMashCounter = randomButtonMashCounter + 1;
-    }
-    totalTacos.textContent = `Total Tacos Sold per Click: ${update * bonus}`;
-    scoreList.textContent = `Money: $${score}`;
-    shop.textContent = `More Tacos: $${shopRequirement}`;
-    mult.textContent = `Tacos Sold per Click: ${update}`;
-    automatic.textContent = `Total Earnings per Second: 0`;
-    pfpbuy.textContent = `Better Toppings: $${toppingsRequirement}`;
-    buyAuto.textContent = `Hire Worker: $${autoRequirement}`;
-    pfp.textContent = `Toppings Quality Multiplier: ${bonus}`
-}
-
-function getCookie(name) {
-    const value = "; " + document.cookie;
-    const parts = value.split("; " + name + "=");
-    if (parts.length === 2) return parts.pop().split(";").shift();
-}
-
-// Function to set a cookie
-function setCookie(name, value) {
-    document.cookie = `${name}=${value}; expires=Fri, 31 Dec 9999 23:59:59 GMT`;
-}
+const {Taco} = require('/models');
 
 const debug = false;
 if (debug) {
@@ -98,10 +46,6 @@ const automatic= document.getElementById('auto');
 const buyAuto = document.getElementById('buyAuto');
 const event = document.getElementById('events');
 const reset = document.getElementById('reset');
-save.addEventListener('click', function () {
-    funcAutoSave();
-    alert('Game Saved!');
-});
 const resturant = document.getElementById('resturant');
 const buyResturant = document.getElementById('buyResturant');
 
@@ -148,15 +92,6 @@ reset.addEventListener('click', function(){
     pfpbuy.textContent = `Better Toppings: $${toppingsRequirement}`;
     buyAuto.textContent = `Hire Worker: $${autoRequirement}`;
     pfp.textContent = `Toppings Quality Multiplier: ${bonus}`
-    setCookie("autoUpdate", autoUpdate);
-    setCookie("bonus", bonus);
-    setCookie("update", update);
-    setCookie("score", score);
-    setCookie("shopRequirement", shopRequirement);
-    setCookie("autoUpdate2", autoUpdate2);
-    setCookie("autobuythingy", autobuythingy);
-    setCookie("autoRequirement", autoRequirement);
-    setCookie("toppingsRequirement", toppingsRequirement);
 
 })
 

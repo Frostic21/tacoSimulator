@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Taco.init({
-    bonus: DataTypes.INTEGER
+    bonus: DataTypes.INTEGER,
   }, {
     sequelize,
     modelName: 'Taco',
