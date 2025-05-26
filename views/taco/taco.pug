@@ -1,57 +1,52 @@
-doctype html
-html
-  head
-    link(rel='stylesheet', href='/stylesheets/style1.css')
-    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Pixelify Sans')
-  body
-    block content
-        div.container
-            div.center
-                div.row
-                    div.content
-                        h1 Juan's Taco Truck
+extends ../layout
+
+block content
+    div.container
+        div.center
+            div.row
+                div.content
+                    h1 Juan's Taco Truck
+                    br
+                    form(action="/score" method="POST")
+                        button.colorButton1(type="submit")
+                            img(src="https://openclipart.org/image/800px/337526" height=200 width=300)
+                    br
+                    div(id="randomStuff")
+                        p(id="score" style="color:greenyellow") Money:$ 0
+                        div.row
+                            p(id="events")
+                    br
+                    br
+                    h3 Updates:
+                    ol
+                        li New User Technology!
                         br
-                        div(id="tacoThing")
-                            button.colorButton1(id="taco")
-                                img(src="https://openclipart.org/image/800px/337526" height=200 width=300)
+                        li New Leaderboard system
                         br
-                        div(id="randomStuff")
-                            h3(id="score" style="color:greenyellow") Money:$0
-                            div.row
-                                p(id="events")
+                        li Same as before-ish
+                div.content2
+                    div.column
+                        h1(style="text-decoration: underline;") Upgrades
+                        div.row
+                            p(id="mult") Tacos Sold per Click: 1
+                            button.colorButton(id="shop") More Tacos: $20
                         br
+                        div.row
+                            p(id="pfp") Toppings Quality Multiplier: 1
+                            button.colorButton(id="pfpbuy") Better Toppings: $2000
                         br
-                        h3 Updates:
-                        ol
-                            li New User Technology!
-                            br
-                            li New Leaderboard system
-                            br
-                            li Same as before-ish
-                    div.content2
-                        div.column
-                            h1(style="text-decoration: underline;") Upgrades
-                            div.row
-                                p(id="mult") Tacos Sold per Click: 1
-                                button.colorButton(id="shop") More Tacos: $20
-                            br
-                            div.row
-                                p(id="pfp") Toppings Quality Multiplier: 1
-                                button.colorButton(id="pfpbuy") Better Toppings: $2000
-                            br
-                            div.row
-                                p(id="auto") Total Earnings per second: 0
-                                button.colorButton(id="buyAuto") Hire Worker: $5000
-                            br
-                            div.row
-                                p(id="resturant") Fancy Multiplier: 1
-                                button.colorButton(id="buyResturant") Buy Restaurant: $50,000
-                            br
-                            div.row
-                                button.colorButton(id="autSave") Save
-                                button.colorButton(id="reset" style="background-color: red") RESET
-                            br
-                            div(id="debug")
-                            br
-                            div.center(id="total") Total Earnings per Click: 1
-    script(src="/javascripts/tacoGame.js")
+                        div.row
+                            p(id="auto") Total Earnings per second: 0
+                            button.colorButton(id="buyAuto") Hire Worker: $5000
+                        br
+                        div.row
+                            p(id="resturant") Fancy Multiplier: 1
+                            button.colorButton(id="buyResturant") Buy Restaurant: $50,000
+                        br
+                        div.row
+                            button.colorButton(id="autSave") Save
+                            button.colorButton(id="reset" style="background-color: red") RESET
+                        br
+                        div(id="debug")
+                        br
+                        div.center(id="total") Total Earnings per Click: 1

@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 const userController = require('../controllers/userController')
+const tacoController = require('../controllers/tacoController')
 
 
 function addUserToViews(req, res, next) {
@@ -22,9 +23,11 @@ function redirectGuests(req, res, next) {
 router.get('/', addUserToViews, function(req, res, next) {
   res.render('index');
 });
+router.post('/score', tacoController.updateScore);
 router.get('/taco', addUserToViews, redirectGuests, function(req, res, next) {
-  res.render('taco/taco')
-})
+  res.render('taco/taco');
+});
+
 router.get('/register', addUserToViews, userController.renderRegistration);
 router.post('/register', addUserToViews, userController.register);
 
