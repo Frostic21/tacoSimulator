@@ -1,0 +1,24 @@
+doctype html
+html
+head
+    link(rel='stylesheet', href='/stylesheets/style2.css')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Pixelify Sans')
+body
+    div.container
+        div.center
+            div.content
+                h1 Leaderboard
+                table
+                    thead
+                        tr
+                            th Rank
+                            th Username
+                            th Score
+                    tbody
+                        each entry, i in leaderboard
+                            tr
+                                td #{i + 1}
+                                td #{entry.User.name}
+                                td #{entry.score}
+                br
+                a.Button3(href="/") Home Screen

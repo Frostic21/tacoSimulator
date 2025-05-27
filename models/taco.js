@@ -10,13 +10,14 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      Taco.belongsTo(models.User, { foreignKey: 'user_id' });
     }
   }
   Taco.init({
     score: DataTypes.INTEGER,
-    update: DataTypes.INTEGER,
-    bonus: DataTypes.INTEGER
+    mult1: DataTypes.INTEGER,
+    bonus: DataTypes.INTEGER,
+    user_id: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Taco',

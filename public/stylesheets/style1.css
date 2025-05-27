@@ -103,11 +103,22 @@ section header{
     transition-duration: 0.5s;
     box-shadow: 0 4px 16px 0 rgba(255,165,100,0.2), 0 8px 16px 0 rgba(0,0,0,0.2);
 }
+.colorButton2{
+    height: 50px;
+    font-family: 'Pixelify Sans';
+    background-color: yellowgreen;
+    transition-duration: 0.5s;
+    box-shadow: 0 4px 16px 0 rgba(255,165,100,0.2), 0 8px 16px 0 rgba(0,0,0,0.2);
+    border-radius: 5px;
+}
 .colorButton:hover{
     background-color: grey; /* Green */
     color: white;
 }
-
+.colorButton2:hover{
+    background-color: grey; /* Green */
+    color: white;
+}
 .center{
     display: flex;
     justify-content: center;
@@ -127,4 +138,19 @@ img:active{
     border-radius: 50px;
     background-color: grey;
     border-color: transparent;
+}
+.Button3{
+    height: 50px;
+    font-family: 'Pixelify Sans';
+    color: black;
+    transition-duration: 0.5s;
+    box-shadow: 0 4px 16px 0 rgba(255,165,100,0.2), 0 8px 16px 0 rgba(0,0,0,0.2);
+    text-decoration: none;
+    margin: auto;
+    padding: 15px;
+    border-radius: 5px;
+}
+.Button3:hover{
+    background-color: grey; /* Green */
+    color: white;
 }

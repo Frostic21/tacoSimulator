@@ -41,6 +41,8 @@ module.exports.authenticate = passport.authenticate('local', {
 });
 
 module.exports.logout = function(req, res){
-    req.logout();
-    res.redirect('/login');
+    req.logout(function(err) {
+        if (err) { return next(err); }
+        res.redirect('/');
+    });
 }

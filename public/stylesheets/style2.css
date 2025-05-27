@@ -1,0 +1,63 @@
+*{
+    box-sizing: border-box;
+    vertical-align: middle;
+    justify-content: center;
+}
+html{
+    background-image: url("https://cdn.pixilart.com/photos/large/e84ebe1285f57f2.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-color: grey;
+}
+body, html{
+    align-content: center;
+    font-family: 'Pixelify Sans';
+}
+.content{
+    background-image: url("https://cdn.pixilart.com/photos/large/b861ceaf9dd8292.png");
+    background-size: 100%;
+    background-position: center;
+    border-color: black;
+    padding: 30px;
+    width: 920px;
+    height: 640px;
+    border-style: solid;
+    background-repeat: no-repeat;
+    color: greenyellow;
+    font-size: 20px
+}
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Button3{
+    height: 50px;
+    background-color: yellowgreen;
+    font-family: 'Pixelify Sans';
+    color: black;
+    transition-duration: 0.5s;
+    box-shadow: 0 4px 16px 0 rgba(255,165,100,0.2), 0 8px 16px 0 rgba(0,0,0,0.2);
+    text-decoration: none;
+    margin: auto;
+    padding: 15px;
+    border-radius: 5px;
+
+}
+.Button3:hover{
+    background-color: grey; /* Green */
+    color: white;
+}
+h1{
+    text-align: center;
+}
+table{
+    justify-content: center;
+    vertical-align: middle;
+    padding: 0 10px;
+}
+tr, thead{
+    display: flex;
+    justify-content: space-between;
+    width: 840px;
+}
