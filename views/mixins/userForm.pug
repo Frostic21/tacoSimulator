@@ -1,0 +1,11 @@
+mixin userForm(user, actionURL, title)
+
+    div.form-panel
+        div.header= title
+            form(action=actionURL method='post')
+                div.form-input
+                    label(for='name') Name:
+                    input(type='text' id='name' name='name' value=user.name)
+                div.button-row
+                    a.cancel(href='/') Cancel
+                    button.save(type='submit') Submit

@@ -54,10 +54,15 @@ h1{
 table{
     justify-content: center;
     vertical-align: middle;
-    padding: 0 10px;
 }
 tr, thead{
     display: flex;
     justify-content: space-between;
+    gap:200px;
     width: 840px;
+}
+.row {
+    justify-content: left;
+    display: flex;
+    gap: 16px;
 }

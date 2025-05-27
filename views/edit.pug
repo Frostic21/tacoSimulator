@@ -1,0 +1,5 @@
+extends layout
+
+block content
+    include mixins/userForm
+    +userForm(user, `/edit`, 'Edit Pokemon')

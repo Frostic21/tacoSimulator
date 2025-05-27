@@ -35,6 +35,9 @@ router.post('/upgrade', addUserToViews, redirectGuests, tacoController.buyUpgrad
 router.post('/save', addUserToViews, redirectGuests, tacoController.saveProgress);
 router.post('/reset', addUserToViews, redirectGuests, tacoController.resetProgress);
 
+router.get('/edit', addUserToViews, redirectGuests, userController.renderEditForm);
+router.post('/edit', addUserToViews, redirectGuests, userController.updateUsername);
+
 /* User auth routes */
 router.get('/register', addUserToViews, userController.renderRegistration);
 router.post('/register', addUserToViews, userController.register);
