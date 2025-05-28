@@ -29,6 +29,18 @@ module.exports.buyUpgrade = async (req, res) => {
 
     res.redirect('/taco');
 };
+module.exports.buyUpgrade2 = async (req, res) => {
+    const taco = await Taco.findOne({where:{user_id:req.user.id}});
+
+    const upgradeCost2 = 2000;
+    if (taco.score >= upgradeCost2) {
+        taco.score -= upgradeCost2;
+        taco.bonus += 1;
+        await taco.save();
+    }
+
+    res.redirect('/taco');
+};
 module.exports.saveProgress = async (req, res) => {
     const taco = await Taco.findOne({where:{user_id:req.user.id}});
     if (taco) await taco.save();

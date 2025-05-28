@@ -31,6 +31,7 @@ router.get('/leaderboard', addUserToViews, redirectGuests, tacoController.showLe
 /* POST score increment when taco button pressed */
 router.post('/score', addUserToViews, redirectGuests, tacoController.updateScore);
 router.post('/upgrade', addUserToViews, redirectGuests, tacoController.buyUpgrade);
+router.post('/bonus', addUserToViews, redirectGuests, tacoController.buyUpgrade2);
 
 router.post('/save', addUserToViews, redirectGuests, tacoController.saveProgress);
 router.post('/reset', addUserToViews, redirectGuests, tacoController.resetProgress);
