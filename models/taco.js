@@ -13,16 +13,21 @@ module.exports = (sequelize, DataTypes) => {
       Taco.belongsTo(models.User, { foreignKey: 'user_id' });
     }
   }
-  Taco.init({
-    score: DataTypes.INTEGER,
-    mult1: DataTypes.INTEGER,
-    bonus: DataTypes.INTEGER,
-    user_id: DataTypes.INTEGER
-  }, {
-    sequelize,
-    modelName: 'Taco',
-    tableName: 'taco',
-    timestamps: false
-  });
+ Taco.init({
+  id: { // Add this block
+    type: DataTypes.INTEGER,
+    primaryKey: true,
+    autoIncrement: true
+  },
+  score: DataTypes.INTEGER,
+  mult1: DataTypes.INTEGER,
+  bonus: DataTypes.INTEGER,
+  user_id: DataTypes.INTEGER
+}, {
+  sequelize,
+  modelName: 'Taco',
+  tableName: 'taco',
+  timestamps: false
+});
   return Taco;
 };
