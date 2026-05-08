@@ -8,21 +8,20 @@ html
             div.center
                 div.row
                     div.content
-                        div.content
-                            h1 Juan's Taco Truck
-                            br
-                            //- Removed the form and added id="taco-button"
-                            button.colorButton1#taco-button(type="button")
-                                img(src="https://openclipart.org/image/800px/337526" height=200 width=300)
-                            br
-                            div(id="randomStuff")
-                                //- Ensure your score has an id we can update
-                                h3#score-display(style="color:greenyellow") Money:$#{score}
-                            div.row
-                                p#events
+                        h1 Juan's Taco Truck
+                        br
+                        //- Removed the form and added id="taco-button"
+                        button.colorButton1#taco-button(type="button")
+                            img(src="https://openclipart.org/image/800px/337526" height=200 width=300)
+                        br
+                        div(id="randomStuff")
+                            //- Ensure your score has an id we can update
+                            h3#score-display(style="color:greenyellow") Money:$#{score}
+                        div.row
+                            p#events
                         br
                         br
-
+    
                         h3 Updates:
                         ol
                             li New User Technology!
@@ -48,7 +47,7 @@ html
                             div.row
                                 form(action="/save" method="POST")
                                     button.colorButton(type="submit") Save
-
+    
                                 form(action="/reset" method="POST")
                                     button.colorButton(type="submit" style="background-color: red") RESET
                             br
