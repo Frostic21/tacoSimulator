@@ -12,10 +12,16 @@ module.exports.showTacoPage = async (req, res) => {
 module.exports.updateScore = async (req, res) => {
     const taco = await Taco.findOne({where:{user_id:req.user.id}});
     if (taco) {
-        const multiplier = (taco.mult1*taco.bonus);
+        const multiplier = (taco.mult1 * taco.bonus);
         await taco.increment('score', { by: multiplier });
+        
+        // Refresh the taco object to get the updated score
+        await taco.reload(); 
+
+        // Send JSON back instead of redirecting
+        return res.json({ newScore: taco.score });
     }
-    res.redirect('/taco');
+    res.status(404).json({ error: "Taco record not found" });
 };
 module.exports.buyUpgrade = async (req, res) => {
     const taco = await Taco.findOne({where:{user_id:req.user.id}});
