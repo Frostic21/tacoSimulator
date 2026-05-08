@@ -69,7 +69,17 @@ module.exports.buyRestaurant = async (req, res) => {
     }
     res.status(400).json({ error: "Not enough money" });
 };
-// Route to handle Worker passive income (called by the frontend periodically)
+module.exports.buyWorker = async (req, res) => {
+    const taco = await Taco.findOne({where:{user_id:req.user.id}});
+    const cost = 5000; // Based on your old project
+    if (taco.score >= cost) {
+        taco.score -= cost;
+        taco.workers += 1;
+        await taco.save();
+        return res.json({ newScore: taco.score, newWorkers: taco.workers });
+    }
+    res.status(400).json({ error: "Not enough money" });
+};
 module.exports.applyPassiveIncome = async (req, res) => {
     const taco = await Taco.findOne({where:{user_id:req.user.id}});
     if (taco && taco.workers > 0) {
