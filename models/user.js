@@ -13,15 +13,21 @@ module.exports = (sequelize, DataTypes) => {
       User.hasOne(models.Taco, { foreignKey: 'user_id' });
     }
   }
-  User.init({
-    email: DataTypes.STRING,
-    name: DataTypes.STRING,
-    password: DataTypes.STRING
-  }, {
-    sequelize,
-    modelName: 'User',
-    tableName: 'taco_user',
-    timestamps: false
-  });
+  // user.js
+User.init({
+  id: {
+    type: DataTypes.INTEGER,
+    primaryKey: true,
+    autoIncrement: true
+  },
+  email: DataTypes.STRING,
+  name: DataTypes.STRING,
+  password: DataTypes.STRING
+}, {
+  sequelize,
+  modelName: 'User',
+  tableName: 'taco_user',
+  timestamps: false
+});
   return User;
 };
