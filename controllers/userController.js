@@ -6,23 +6,27 @@ module.exports.renderRegistration= function(req,res){
     res.render('user/register');
 }
 
-module.exports.register = async function(req,res){
-    const existingUser = await User.findOne({
-        where:{
-            email: req.body.email
+module.exports.register = async function(req, res) {
+    try {
+        const existingUser = await User.findOne({
+            where: { email: req.body.email }
+        });
+
+        if (existingUser) {
+            return res.render('user/register', { error: 'User Already Exists' });
         }
-    });
-    if(existingUser){
-        res.render('user/register',{
-            error: 'User Already Exists'
-        })
-    } else {
+
         await User.create({
             email: req.body.email,
             password: md5(req.body.password),
             name: req.body.name,
         });
+
         res.redirect('/');
+    } catch (err) {
+        // This catches the '23502' or 'column id does not exist' errors
+        console.error("Registration Error:", err);
+        res.render('user/register', { error: 'A database error occurred. Please try again later.' });
     }
 }
 
