@@ -6,6 +6,10 @@ const saveBtn = document.getElementById('save-button');
 const resetBtn = document.getElementById('reset-button');
 const multDisplay = document.getElementById('mult-display');
 const bonusDisplay = document.getElementById('bonus-display');
+const workerBtn = document.getElementById('worker-button');
+const restaurantBtn = document.getElementById('restaurant-button');
+const workerDisplay = document.getElementById('worker-display');
+const restaurantDisplay = document.getElementById('restaurant-display');
 
 tacoButton.addEventListener('click', async function(e) {
     e.preventDefault(); // Prevents any accidental reloads
@@ -46,6 +50,41 @@ upgrade2Btn.addEventListener('click', async () => {
         bonusDisplay.textContent = `Toppings Quality Multiplier: ${data.newBonus}`;
     }
 });
+workerBtn.addEventListener('click', async () => {
+    const response = await fetch('/buy-worker', { method: 'POST' });
+    if (response.ok) {
+        const data = await response.json();
+        document.getElementById('score-display').textContent = `Money:$${data.newScore}`;
+        workerDisplay.textContent = `Workers Hired: ${data.newWorkers}`;
+    }
+});
+setInterval(async () => {
+    try {
+        const response = await fetch('/passive-income', { method: 'POST' });
+        if (response.ok) {
+            const data = await response.json();
+            document.getElementById('score-display').textContent = `Money:$${data.newScore}`;
+        }
+    } catch (err) {
+        console.error('Passive income error:', err);
+    }
+}, 3000);
+
+restaurantBtn.addEventListener('click', async () => {
+    const response = await fetch('/buy-restaurant', { method: 'POST' });
+    if (response.ok) {
+        const data = await response.json();
+        document.getElementById('score-display').textContent = `Money:$${data.newScore}`;
+        restaurantDisplay.textContent = `Restaurant Multiplier: x${data.newRestaurants}`;
+    }
+});
+
+// Passive Income Logic (Optional)
+// If workers generate money every second, add this:
+setInterval(async () => {
+    // You could create a /passive-income route or just let the 
+    // server calculate the difference on the next 'Save'
+}, 1000);
 
 // Save Progress
 saveBtn.addEventListener('click', async () => {
