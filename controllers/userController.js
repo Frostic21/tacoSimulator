@@ -62,7 +62,7 @@ module.exports.updateUsername = async function(req, res) {
     try {
         await User.update(
             { name: req.body.name },
-            { where: { id: req.params.id } }
+            { where: { id: req.user.id } }
         );
         res.redirect('/leaderboard');
     } catch (err) {
