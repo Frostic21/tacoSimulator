@@ -33,22 +33,17 @@ html
                         div.column
                             h1(style="text-decoration: underline") Upgrades
                             div.row
-                                p#mult Tacos Sold per Click: #{mult1}
-                                form(action="/upgrade" method="POST")
-                                    button.colorButton2(type="submit") Buy Upgrade ($20)
+                                p#mult-display Tacos Sold per Click: #{mult1}
+                                button.colorButton2#upgrade1-button(type="button") Buy Upgrade ($20)
                             br
                             div.row
-                                p#pfp Toppings Quality Multiplier: #{bonus}
-                                form(action="/bonus" method="POST")
-                                    button.colorButton2(type="submit") Buy Upgrade ($2000)
+                                p#bonus-display Toppings Quality Multiplier: #{bonus}
+                                button.colorButton2#upgrade2-button(type="button") Buy Upgrade ($2000)
                             br
                             br
                             div.row
-                                form(action="/save" method="POST")
-                                    button.colorButton(type="submit") Save
-
-                                form(action="/reset" method="POST")
-                                    button.colorButton(type="submit" style="background-color: red") RESET
+                                button.colorButton#save-button(type="button") Save
+                                button.colorButton#reset-button(type="button" style="background-color: red") RESET
                             br
                             br
                             br

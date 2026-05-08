@@ -25,33 +25,34 @@ module.exports.updateScore = async (req, res) => {
 };
 module.exports.buyUpgrade = async (req, res) => {
     const taco = await Taco.findOne({where:{user_id:req.user.id}});
-
     const upgradeCost = 20;
     if (taco.score >= upgradeCost) {
         taco.score -= upgradeCost;
         taco.mult1 += 1;
         await taco.save();
+        return res.json({ newScore: taco.score, newMult: taco.mult1 });
     }
-
-    res.redirect('/taco');
+    res.status(400).json({ error: "Not enough money" });
 };
+
 module.exports.buyUpgrade2 = async (req, res) => {
     const taco = await Taco.findOne({where:{user_id:req.user.id}});
-
     const upgradeCost2 = 2000;
     if (taco.score >= upgradeCost2) {
         taco.score -= upgradeCost2;
         taco.bonus += 1;
         await taco.save();
+        return res.json({ newScore: taco.score, newBonus: taco.bonus });
     }
-
-    res.redirect('/taco');
+    res.status(400).json({ error: "Not enough money" });
 };
+
 module.exports.saveProgress = async (req, res) => {
     const taco = await Taco.findOne({where:{user_id:req.user.id}});
     if (taco) await taco.save();
-    res.redirect('/taco');
+    res.json({ success: true });
 };
+
 module.exports.resetProgress = async (req, res) => {
     const taco = await Taco.findOne({where:{user_id:req.user.id}});
     if (taco) {
@@ -59,9 +60,8 @@ module.exports.resetProgress = async (req, res) => {
         taco.mult1 = 1;
         taco.bonus = 1;
         await taco.save();
+        res.json({ newScore: 0, newMult: 1, newBonus: 1 });
     }
-
-    res.redirect('/taco');
 };
 
 exports.showLeaderboard = async (req, res) => {
