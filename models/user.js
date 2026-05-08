@@ -15,10 +15,10 @@ module.exports = (sequelize, DataTypes) => {
   }
   // user.js
 User.init({
-  id: {
+  id: { // Add this block
     type: DataTypes.INTEGER,
     primaryKey: true,
-    autoIncrement: true // This tells Sequelize to use 'DEFAULT' in queries
+    autoIncrement: true
   },
   email: DataTypes.STRING,
   name: DataTypes.STRING,
