@@ -32,6 +32,9 @@ router.get('/leaderboard', addUserToViews, redirectGuests, tacoController.showLe
 router.post('/score', addUserToViews, redirectGuests, tacoController.updateScore);
 router.post('/upgrade', addUserToViews, redirectGuests, tacoController.buyUpgrade);
 router.post('/bonus', addUserToViews, redirectGuests, tacoController.buyUpgrade2);
+router.post('/buy-worker', addUserToViews, redirectGuests, tacoController.buyWorker);
+router.post('/buy-restaurant', addUserToViews, redirectGuests, tacoController.buyRestaurant);
+router.post('/passive-income', addUserToViews, redirectGuests, tacoController.applyPassiveIncome);
 
 router.post('/save', addUserToViews, redirectGuests, tacoController.saveProgress);
 router.post('/reset', addUserToViews, redirectGuests, tacoController.resetProgress);
