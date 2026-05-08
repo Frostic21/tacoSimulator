@@ -18,7 +18,7 @@ User.init({
   id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
-    autoIncrement: true
+    autoIncrement: true // This tells Sequelize to use 'DEFAULT' in queries
   },
   email: DataTypes.STRING,
   name: DataTypes.STRING,
