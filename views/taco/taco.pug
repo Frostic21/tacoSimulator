@@ -8,14 +8,14 @@ html
             div.center
                 div.row
                     div.content
-                        h1 Juan's Taco Truck
-                        br
-                        form(action="/score" method="POST")
-                            button.colorButton1(type="submit")
+                        div.content
+                            h1 Juan's Taco Truck
+                            br
+                            button.colorButton1#taco-button(type="button")
                                 img(src="https://openclipart.org/image/800px/337526" height=200 width=300)
-                        br
-                        div(id="randomStuff")
-                            h3#score(style="color:greenyellow") Money:$#{score}
+                            br
+                            div(id="randomStuff")
+                                h3#score-display(style="color:greenyellow") Money:$#{score}
                             div.row
                                 p#events
                         br
