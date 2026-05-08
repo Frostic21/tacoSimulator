@@ -28,9 +28,6 @@ app.use(session({
     maxAge: 6*60*60*1000
   }
 }));
-sequelize.sync({ alter: true }).then(() => {
-  console.log("Database tables synchronized successfully!");
-});
 const {passport} = require('./middleware/passport');
 app.use(passport.initialize());
 app.use(passport.authenticate('session'));
