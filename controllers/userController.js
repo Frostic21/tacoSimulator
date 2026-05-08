@@ -59,15 +59,14 @@ module.exports.renderEditForm = async function(req, res, next) {
 }
 
 module.exports.updateUsername = async function(req, res) {
-    await User.update(
-        {
-            name: req.body.name,
-        },
-        {
-            where:
-                {
-                    id: req.params.id
-                }
-        });
-    res.redirect('/leaderboard');
+    try {
+        await User.update(
+            { name: req.body.name },
+            { where: { id: req.params.id } }
+        );
+        res.redirect('/leaderboard');
+    } catch (err) {
+        console.error("Update Username Error:", err);
+        res.status(500).send("Failed to update username.");
+    }
 }
