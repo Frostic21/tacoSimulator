@@ -13,21 +13,21 @@ module.exports.showTacoPage = async (req, res) => {
         restaurants: taco.restaurants
     });
 };
-
 module.exports.updateScore = async (req, res) => {
     const taco = await Taco.findOne({where:{user_id:req.user.id}});
     if (taco) {
-        // Impact: (Tacos per Click * Quality) * Restaurant Multiplier
-        // If restaurants = 1, total is unchanged. If restaurants = 2, total doubles.
-        const multiplier = (taco.mult1 * taco.bonus) * taco.restaurants;
+        // Use || 1 to ensure that if the value is NULL or 0, it defaults to 1
+        const workers = taco.workers || 0;
+        const restaurants = taco.restaurants || 1;
+        const mult1 = taco.mult1 || 1;
+        const bonus = taco.bonus || 1;
+
+        const multiplier = (mult1 * bonus) * restaurants;
         
         await taco.increment('score', { by: multiplier });
         await taco.reload(); 
 
-        return res.json({ 
-            newScore: taco.score,
-            currentClickValue: multiplier // Useful for the frontend
-        });
+        return res.json({ newScore: taco.score });
     }
     res.status(404).json({ error: "Taco record not found" });
 };
