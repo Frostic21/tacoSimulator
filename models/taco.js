@@ -22,12 +22,21 @@ module.exports = (sequelize, DataTypes) => {
   score: DataTypes.INTEGER,
   mult1: DataTypes.INTEGER,
   bonus: DataTypes.INTEGER,
-  user_id: DataTypes.INTEGER
-}, {
+  user_id: DataTypes.INTEGER,
+  workers: { 
+      type: DataTypes.INTEGER, 
+      defaultValue: 0 
+    },
+    restaurants: { 
+      type: DataTypes.INTEGER, 
+      defaultValue: 1
+    }
+  }, {
   sequelize,
   modelName: 'Taco',
   tableName: 'taco',
   timestamps: false
+});
 });
   return Taco;
 };
