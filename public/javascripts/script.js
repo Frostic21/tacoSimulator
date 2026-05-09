@@ -68,7 +68,7 @@ setInterval(async () => {
     } catch (err) {
         console.error('Passive income error:', err);
     }
-}, 3000);
+}, 1200);
 
 restaurantBtn.addEventListener('click', async () => {
     const response = await fetch('/buy-restaurant', { method: 'POST' });
@@ -79,12 +79,6 @@ restaurantBtn.addEventListener('click', async () => {
     }
 });
 
-// Passive Income Logic (Optional)
-// If workers generate money every second, add this:
-setInterval(async () => {
-    // You could create a /passive-income route or just let the 
-    // server calculate the difference on the next 'Save'
-}, 1000);
 
 // Save Progress
 saveBtn.addEventListener('click', async () => {
